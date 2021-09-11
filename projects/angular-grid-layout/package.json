@@ -1,5 +1,5 @@
 {
-    "name": "@Hugo221989/angular-grid-layout-hugo",
+    "name": "hugogo/angular-grid-layout-hugo",
     "description": "Grid Layout with draggable and resizable items for Angular",
     "homepage": "https://github.com/Hugo221989/angular-grid-layout",
     "bugs": {
