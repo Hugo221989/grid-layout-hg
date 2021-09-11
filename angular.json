@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-grid-layout": {
+    "angular-grid-layout-hugo": {
       "projectType": "library",
-      "root": "projects/angular-grid-layout",
-      "sourceRoot": "projects/angular-grid-layout/src",
+      "root": "projects/angular-grid-layout-hugo",
+      "sourceRoot": "projects/angular-grid-layout-hugo/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/angular-grid-layout/tsconfig.lib.json",
-            "project": "projects/angular-grid-layout/ng-package.json"
+            "tsConfig": "projects/angular-grid-layout-hugo/tsconfig.lib.json",
+            "project": "projects/angular-grid-layout-hugo/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/angular-grid-layout/tsconfig.lib.prod.json"
+              "tsConfig": "projects/angular-grid-layout-hugo/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular-grid-layout/src/test.ts",
-            "tsConfig": "projects/angular-grid-layout/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-grid-layout/karma.conf.js"
+            "main": "projects/angular-grid-layout-hugo/src/test.ts",
+            "tsConfig": "projects/angular-grid-layout-hugo/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-grid-layout-hugo/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/angular-grid-layout/tsconfig.lib.json",
-              "projects/angular-grid-layout/tsconfig.spec.json"
+              "projects/angular-grid-layout-hugo/tsconfig.lib.json",
+              "projects/angular-grid-layout-hugo/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
