@@ -1,0 +1,39 @@
+{
+  "name": "@katoid/angular-grid-layout",
+  "description": "Grid Layout with draggable and resizable items for Angular",
+  "homepage": "https://github.com/katoid/angular-grid-layout",
+  "bugs": {
+    "url": "https://github.com/katoid/angular-grid-layout/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katoid/angular-grid-layout.git"
+  },
+  "license": "MIT",
+  "version": "0.2.0",
+  "keywords": [
+    "angular",
+    "grid",
+    "drag",
+    "angular-grid",
+    "angular-drag",
+    "angular-layout"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^11.0.6",
+    "@angular/core": "^11.0.6"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/katoid-angular-grid-layout.umd.js",
+  "module": "fesm2015/katoid-angular-grid-layout.js",
+  "es2015": "fesm2015/katoid-angular-grid-layout.js",
+  "esm2015": "esm2015/katoid-angular-grid-layout.js",
+  "fesm2015": "fesm2015/katoid-angular-grid-layout.js",
+  "typings": "katoid-angular-grid-layout.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
+}

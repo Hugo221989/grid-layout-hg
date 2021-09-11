@@ -1,0 +1,29 @@
+/** Cached result of whether the user's browser supports passive event listeners. */
+let supportsPassiveEvents;
+/**
+ * Checks whether the user's browser supports passive event listeners.
+ * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+ */
+export function ktdSupportsPassiveEventListeners() {
+    if (supportsPassiveEvents == null && typeof window !== 'undefined') {
+        try {
+            window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+                get: () => supportsPassiveEvents = true
+            }));
+        }
+        finally {
+            supportsPassiveEvents = supportsPassiveEvents || false;
+        }
+    }
+    return supportsPassiveEvents;
+}
+/**
+ * Normalizes an `AddEventListener` object to something that can be passed
+ * to `addEventListener` on any browser, no matter whether it supports the
+ * `options` parameter.
+ * @param options Object to be normalized.
+ */
+export function ktdNormalizePassiveListenerOptions(options) {
+    return ktdSupportsPassiveEventListeners() ? options : !!options.capture;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFzc2l2ZS1saXN0ZW5lcnMuanMiLCJzb3VyY2VSb290IjoiLi4vLi4vLi4vcHJvamVjdHMvYW5ndWxhci1ncmlkLWxheW91dC9zcmMvIiwic291cmNlcyI6WyJsaWIvdXRpbHMvcGFzc2l2ZS1saXN0ZW5lcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsb0ZBQW9GO0FBQ3BGLElBQUkscUJBQThCLENBQUM7QUFFbkM7OztHQUdHO0FBQ0gsTUFBTSxVQUFVLGdDQUFnQztJQUM1QyxJQUFJLHFCQUFxQixJQUFJLElBQUksSUFBSSxPQUFPLE1BQU0sS0FBSyxXQUFXLEVBQUU7UUFDaEUsSUFBSTtZQUNBLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBQyxNQUFNLEVBQUUsSUFBSyxFQUFFLE1BQU0sQ0FBQyxjQUFjLENBQUMsRUFBRSxFQUFFLFNBQVMsRUFBRTtnQkFDeEUsR0FBRyxFQUFFLEdBQUcsRUFBRSxDQUFDLHFCQUFxQixHQUFHLElBQUk7YUFDMUMsQ0FBQyxDQUFDLENBQUM7U0FDUDtnQkFBUztZQUNOLHFCQUFxQixHQUFHLHFCQUFxQixJQUFJLEtBQUssQ0FBQztTQUMxRDtLQUNKO0lBRUQsT0FBTyxxQkFBcUIsQ0FBQztBQUNqQyxDQUFDO0FBRUQ7Ozs7O0dBS0c7QUFDSCxNQUFNLFVBQVUsa0NBQWtDLENBQUMsT0FBZ0M7SUFFL0UsT0FBTyxnQ0FBZ0MsRUFBRSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDO0FBQzVFLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKiogQ2FjaGVkIHJlc3VsdCBvZiB3aGV0aGVyIHRoZSB1c2VyJ3MgYnJvd3NlciBzdXBwb3J0cyBwYXNzaXZlIGV2ZW50IGxpc3RlbmVycy4gKi9cbmxldCBzdXBwb3J0c1Bhc3NpdmVFdmVudHM6IGJvb2xlYW47XG5cbi8qKlxuICogQ2hlY2tzIHdoZXRoZXIgdGhlIHVzZXIncyBicm93c2VyIHN1cHBvcnRzIHBhc3NpdmUgZXZlbnQgbGlzdGVuZXJzLlxuICogU2VlOiBodHRwczovL2dpdGh1Yi5jb20vV0lDRy9FdmVudExpc3RlbmVyT3B0aW9ucy9ibG9iL2doLXBhZ2VzL2V4cGxhaW5lci5tZFxuICovXG5leHBvcnQgZnVuY3Rpb24ga3RkU3VwcG9ydHNQYXNzaXZlRXZlbnRMaXN0ZW5lcnMoKTogYm9vbGVhbiB7XG4gICAgaWYgKHN1cHBvcnRzUGFzc2l2ZUV2ZW50cyA9PSBudWxsICYmIHR5cGVvZiB3aW5kb3cgIT09ICd1bmRlZmluZWQnKSB7XG4gICAgICAgIHRyeSB7XG4gICAgICAgICAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigndGVzdCcsIG51bGwhLCBPYmplY3QuZGVmaW5lUHJvcGVydHkoe30sICdwYXNzaXZlJywge1xuICAgICAgICAgICAgICAgIGdldDogKCkgPT4gc3VwcG9ydHNQYXNzaXZlRXZlbnRzID0gdHJ1ZVxuICAgICAgICAgICAgfSkpO1xuICAgICAgICB9IGZpbmFsbHkge1xuICAgICAgICAgICAgc3VwcG9ydHNQYXNzaXZlRXZlbnRzID0gc3VwcG9ydHNQYXNzaXZlRXZlbnRzIHx8IGZhbHNlO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgcmV0dXJuIHN1cHBvcnRzUGFzc2l2ZUV2ZW50cztcbn1cblxuLyoqXG4gKiBOb3JtYWxpemVzIGFuIGBBZGRFdmVudExpc3RlbmVyYCBvYmplY3QgdG8gc29tZXRoaW5nIHRoYXQgY2FuIGJlIHBhc3NlZFxuICogdG8gYGFkZEV2ZW50TGlzdGVuZXJgIG9uIGFueSBicm93c2VyLCBubyBtYXR0ZXIgd2hldGhlciBpdCBzdXBwb3J0cyB0aGVcbiAqIGBvcHRpb25zYCBwYXJhbWV0ZXIuXG4gKiBAcGFyYW0gb3B0aW9ucyBPYmplY3QgdG8gYmUgbm9ybWFsaXplZC5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGt0ZE5vcm1hbGl6ZVBhc3NpdmVMaXN0ZW5lck9wdGlvbnMob3B0aW9uczogQWRkRXZlbnRMaXN0ZW5lck9wdGlvbnMpOlxuICAgIEFkZEV2ZW50TGlzdGVuZXJPcHRpb25zIHwgYm9vbGVhbiB7XG4gICAgcmV0dXJuIGt0ZFN1cHBvcnRzUGFzc2l2ZUV2ZW50TGlzdGVuZXJzKCkgPyBvcHRpb25zIDogISFvcHRpb25zLmNhcHR1cmU7XG59XG4iXX0=
