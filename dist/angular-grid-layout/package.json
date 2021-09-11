@@ -1,13 +1,13 @@
 {
-  "name": "@katoid/angular-grid-layout",
+  "name": "hugogo/angular-grid-layout-hugo",
   "description": "Grid Layout with draggable and resizable items for Angular",
-  "homepage": "https://github.com/katoid/angular-grid-layout",
+  "homepage": "https://github.com/Hugo221989/angular-grid-layout",
   "bugs": {
-    "url": "https://github.com/katoid/angular-grid-layout/issues"
+    "url": "https://github.com/Hugo221989/angular-grid-layout/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/katoid/angular-grid-layout.git"
+    "url": "git+https://github.com/Hugo221989/angular-grid-layout.git"
   },
   "license": "MIT",
   "version": "0.2.0",
@@ -26,14 +26,12 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "main": "bundles/katoid-angular-grid-layout.umd.js",
-  "module": "fesm2015/katoid-angular-grid-layout.js",
-  "es2015": "fesm2015/katoid-angular-grid-layout.js",
-  "esm2015": "esm2015/katoid-angular-grid-layout.js",
-  "fesm2015": "fesm2015/katoid-angular-grid-layout.js",
-  "typings": "katoid-angular-grid-layout.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
-  }
+  "main": "bundles/hugogo-angular-grid-layout-hugo.umd.js",
+  "module": "fesm2015/hugogo-angular-grid-layout-hugo.js",
+  "es2015": "fesm2015/hugogo-angular-grid-layout-hugo.js",
+  "esm2015": "esm2015/hugogo-angular-grid-layout-hugo.js",
+  "fesm2015": "fesm2015/hugogo-angular-grid-layout-hugo.js",
+  "typings": "hugogo-angular-grid-layout-hugo.d.ts",
+  "metadata": "hugogo-angular-grid-layout-hugo.metadata.json",
+  "sideEffects": false
 }

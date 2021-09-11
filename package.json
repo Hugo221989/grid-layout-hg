@@ -1,5 +1,5 @@
 {
-    "name": "angular-grid-layout-src",
+    "name": "angular-grid-layout-hugo-src",
     "scripts": {
         "ng": "ng",
         "start": "ng serve --port 1234",
@@ -7,20 +7,20 @@
         "build": "ng build",
         "build:demo-app": "ng build demo-app",
         "build:demo-app:prod": "ng build demo-app --prod",
-        "build:grid": "ng build angular-grid-layout",
-        "build:grid:watch": "ng build angular-grid-layout --watch",
-        "build:grid:prod": "ng build --prod angular-grid-layout",
+        "build:grid": "ng build angular-grid-layout-hugo",
+        "build:grid:watch": "ng build angular-grid-layout-hugo --watch",
+        "build:grid:prod": "ng build --prod angular-grid-layout-hugo",
         "serve:demo-app": "http-server -p 1234 --proxy http://localhost:1234? -c-1 dist/demo-app",
         "deploy:demo-app": "ng deploy --base-href=/angular-grid-layout/",
         "test": "ng test angular-grid-layout",
         "lint": "ng lint",
         "lint:build": "tsc -p tsconfig.lint.json",
         "e2e": "ng e2e",
-        "copy-readme": "ts-node --project scripts/tsconfig.scripts.json scripts/copy-file.ts README.md dist/angular-grid-layout/README.md",
+        "copy-readme": "ts-node --project scripts/tsconfig.scripts.json scripts/copy-file.ts README.md dist/angular-grid-layout-hugo/README.md",
         "commit": "git-cz",
         "release": "standard-version"
     },
-    "private": true,
+    "private": false,
     "dependencies": {
         "@angular/animations": "~11.0.4",
         "@angular/cdk": "~11.0.3",
