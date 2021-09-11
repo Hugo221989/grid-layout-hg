@@ -1,0 +1,79 @@
+{
+    "name": "angular-grid-layout-src",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve --port 1234",
+        "start:public": "ng serve --host 0.0.0.0 --port 1234",
+        "build": "ng build",
+        "build:demo-app": "ng build demo-app",
+        "build:demo-app:prod": "ng build demo-app --prod",
+        "build:grid": "ng build angular-grid-layout",
+        "build:grid:watch": "ng build angular-grid-layout --watch",
+        "build:grid:prod": "ng build --prod angular-grid-layout",
+        "serve:demo-app": "http-server -p 1234 --proxy http://localhost:1234? -c-1 dist/demo-app",
+        "deploy:demo-app": "ng deploy --base-href=/angular-grid-layout/",
+        "test": "ng test angular-grid-layout",
+        "lint": "ng lint",
+        "lint:build": "tsc -p tsconfig.lint.json",
+        "e2e": "ng e2e",
+        "copy-readme": "ts-node --project scripts/tsconfig.scripts.json scripts/copy-file.ts README.md dist/angular-grid-layout/README.md",
+        "commit": "git-cz",
+        "release": "standard-version"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "~11.0.4",
+        "@angular/cdk": "~11.0.3",
+        "@angular/common": "~11.0.4",
+        "@angular/compiler": "~11.0.4",
+        "@angular/core": "~11.0.4",
+        "@angular/forms": "~11.0.4",
+        "@angular/material": "~11.0.3",
+        "@angular/platform-browser": "~11.0.4",
+        "@angular/platform-browser-dynamic": "~11.0.4",
+        "@angular/router": "~11.0.4",
+        "@swimlane/ngx-charts": "~17.0.0",
+        "rxjs": "~6.6.0",
+        "tslib": "^2.0.0",
+        "zone.js": "~0.10.2"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~0.1100.6",
+        "@angular/cli": "~11.0.4",
+        "@angular/compiler-cli": "~11.0.4",
+        "@commitlint/cli": "~11.0.0",
+        "@commitlint/config-angular": "~11.0.0",
+        "@commitlint/config-conventional": "~11.0.0",
+        "@types/jasmine": "~3.6.0",
+        "@types/node": "^12.11.1",
+        "angular-cli-ghpages": "~1.0.0-rc.1",
+        "codelyzer": "^6.0.0",
+        "cz-conventional-changelog": "~3.3.0",
+        "http-server": "~0.12.3",
+        "husky": "~4.3.8",
+        "jasmine-core": "~3.6.0",
+        "jasmine-spec-reporter": "~5.0.0",
+        "karma": "~5.1.0",
+        "karma-chrome-launcher": "~3.1.0",
+        "karma-coverage": "~2.0.3",
+        "karma-jasmine": "~4.0.0",
+        "karma-jasmine-html-reporter": "^1.5.0",
+        "ng-packagr": "^11.0.0",
+        "protractor": "~7.0.0",
+        "standard-version": "~9.1.0",
+        "ts-node": "~8.3.0",
+        "tslint": "~6.1.0",
+        "typescript": "~4.0.2"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "version": "0.2.0"
+}
